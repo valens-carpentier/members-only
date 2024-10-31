@@ -1,0 +1,27 @@
+project-root/
+├── app.js
+├── .env
+├── package.json
+├── package-lock.json
+├── README.md
+├── db/
+│   ├── pool.js              # Sets up PostgreSQL connection pool
+│   ├── populatedb.js        # Script for populating the database with initial data
+│   └── queries.js           # Centralized database queries
+├── controllers/
+│   ├── authController.js    # Handles user authentication
+│   ├── userController.js    # Handles user-specific logic
+│   └── messageController.js # Handles message creation and retrieval
+├── public/
+│   └── styles/
+│       └── main.css         # Main stylesheet
+├── routes/
+│   ├── authRoutes.js        # Routes for login, signup, etc.
+│   ├── userRoutes.js        # Routes for user profile, membership, etc.
+│   └── messageRoutes.js     # Routes for creating and displaying messages
+├── views/
+│   ├── index.ejs            # Homepage
+│   ├── sign-up-form.ejs     # User signup form
+│   ├── login-form.ejs       # User login form
+│   ├── new-message-form.ejs # Form to create a new message
+│   └── join-club.ejs        # Form to join the club

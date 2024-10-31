@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Member App</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome, <%= user.full_name %></h1>
+        <p>Membership Status: <%= user.membership_status %></p>
+        <% if (user.membership_status !== 'member') { %>
+            <a href="/join-club">Join the Club</a>
+        <% } %>
+        <a href="/logout">Logout</a>
+    </header>
+
+    <main>
+        <% if (user.membership_status === 'member') { %>
+            <section class="create-message">
+                <h2>Create New Message</h2>
+                <form action="/messages" method="POST">
+                    <div>
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div>
+                        <label for="content">Content:</label>
+                        <textarea id="content" name="content" required></textarea>
+                    </div>
+                    <button type="submit">Post Message</button>
+                </form>
+            </section>
+        <% } %>
+
+        <section class="messages">
+            <h2>Messages</h2>
+            <% if (messages && messages.length > 0) { %>
+                <% messages.forEach(message => { %>
+                    <article class="message">
+                        <h3><%= message.title %></h3>
+                        <p><%= message.content %></p>
+                        <% if (user.membership_status === 'member') { %>
+                            <p>Posted by: <%= message.username %></p>
+                        <% } else { %>
+                            <p>Posted by: *********</p>
+                        <% } %>
+                        <p>Posted on: <%= message.timestamp %></p>
+                    </article>
+                <% }) %>
+            <% } else { %>
+                <p>No messages yet!</p>
+            <% } %>
+        </section>
+    </main>
+</body>
+</html>

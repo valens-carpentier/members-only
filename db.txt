@@ -1,0 +1,20 @@
+\c app_db; -- Connect to app_db
+
+-- Users Table
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL, 
+    username VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    membership_status VARCHAR(20) CHECK (membership_status IN ('member', 'non-member')) NOT NULL
+);
+
+-- Messages Table
+CREATE TABLE messages (
+    message_id SERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    content TEXT NOT NULL,
+    user_creator INT NOT NULL,
+    FOREIGN KEY (user_creator) REFERENCES users(user_id)
+);

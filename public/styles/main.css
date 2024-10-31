@@ -1,0 +1,138 @@
+/* Base styles */
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10pt;
+    background-color: #f6f6ef;
+    margin: 0;
+    padding: 8px;
+    color: #000000;
+}
+
+/* Header styles */
+header {
+    background-color: #ff6600;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 13pt;
+    color: #000000;
+    margin: 0;
+    display: inline-block;
+}
+
+header p, header a {
+    display: inline-block;
+    margin: 0 5px;
+    color: #000000;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Message creation form */
+.create-message {
+    background-color: #f6f6ef;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ff6600;
+}
+
+.create-message h2 {
+    font-size: 13pt;
+    margin: 0 0 10px 0;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    font-family: monospace;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #ff6600;
+    color: #000000;
+    border: 1px solid #ff6600;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+button:hover {
+    background-color: #ff7722;
+}
+
+/* Messages section */
+.messages {
+    background-color: #f6f6ef;
+}
+
+.message {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.message h3 {
+    font-size: 11pt;
+    margin: 0;
+    color: #000000;
+}
+
+.message p {
+    color: #828282;
+    font-size: 9pt;
+    margin: 3px 0;
+}
+
+/* Auth forms */
+.error-message {
+    color: #ff6600;
+    margin: 10px 0;
+}
+
+/* Login/Signup forms */
+form {
+    max-width: 300px;
+    margin: 20px 0;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Join club section */
+.join-club {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ff6600;
+}
